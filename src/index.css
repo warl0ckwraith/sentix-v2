@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 230 25% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 230 25% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 230 25% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 20 80% 55%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 220 30% 12%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 30% 12%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 20 80% 55%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 30% 12%;
+    --input: 220 30% 12%;
+    --ring: 20 80% 55%;
+
+    --radius: 0.5rem;
+
+    /* N8N-inspired Brand Colors */
+    --n8n-orange: 20 80% 55%;
+    --n8n-purple: 280 60% 45%;
+    --cyber-blue: 212 100% 47%;
+    --terminal-green: 120 100% 50%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(230 25% 6%), hsl(280 60% 15%));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(220 30% 10%));
+    --gradient-accent: linear-gradient(90deg, hsl(var(--n8n-orange)), hsl(var(--n8n-purple)));
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 220 25% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 0 84% 60%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 217 32% 17%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 32% 17%;
+    --sidebar-ring: 0 84% 60%;
+  }
+
+  .dark {
+    /* Dark mode already optimized for cybersecurity theme */
+    --background: 220 25% 7%;
+    --foreground: 210 40% 98%;
+    --card: 220 25% 9%;
+    --card-foreground: 210 40% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
