@@ -12,7 +12,8 @@ import {
   FileText,
   Send,
   Globe,
-  Lock
+  Lock,
+  Zap
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
@@ -60,9 +61,18 @@ export const HeroSection = () => {
 
           {/* AI Workflow Creator */}
           <Card className="max-w-4xl mx-auto p-8 bg-card/80 backdrop-blur-md border-border">
-            <div className="mb-6">
-              <h3 className="text-xl font-semibold text-foreground mb-2">Pentesting Workflow Builder</h3>
-              <p className="text-muted-foreground">Upload questionnaires, describe requirements, and let AI design custom penetration testing workflows with n8n automation</p>
+            <div className="mb-6 text-center">
+              <div className="flex items-center justify-center mb-4">
+                <Zap className="h-8 w-8 text-orange-500 mr-3" />
+                <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold">
+                  <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">
+                    Pentesting Workflow Builder
+                  </span>
+                </h3>
+              </div>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Upload questionnaires, describe requirements, and let AI design custom penetration testing workflows with n8n automation
+              </p>
             </div>
             
             {/* Chat Upload Interface */}
