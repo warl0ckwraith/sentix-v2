@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { usePentest } from '@/contexts/PentestContext';
 import { DashboardLayout } from '@/components/dashboard/DashboardLayout';
-import { WorkflowBuilder } from '@/components/workflow/WorkflowBuilder';
 import { DashboardMain } from '@/components/dashboard/DashboardMain';
+import { Button } from '@/components/ui/button';
 import { createMockScanTarget, createMockWorkflowSteps, simulateProgressUpdates } from '@/utils/mockData';
 
 export default function Dashboard() {
@@ -56,17 +56,22 @@ export default function Dashboard() {
       {isScanning ? (
         <DashboardMain />
       ) : (
-        <div className="min-h-screen bg-background p-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-8">
-              <h1 className="text-4xl font-bold bg-gradient-to-r from-cyber-blue to-n8n-orange bg-clip-text text-transparent mb-4">
-                AI-Powered Pentesting Platform
-              </h1>
-              <p className="text-lg text-muted-foreground">
-                Launch intelligent security assessments with automated workflows
-              </p>
-            </div>
-            <WorkflowBuilder />
+        <div className="min-h-screen bg-background p-6 flex items-center justify-center">
+          <div className="text-center space-y-6">
+            <div className="text-6xl">🔍</div>
+            <h1 className="text-2xl font-semibold text-muted-foreground">
+              No Active Scan
+            </h1>
+            <p className="text-muted-foreground max-w-md">
+              Launch a penetration test from the home page to view real-time scanning progress and results here.
+            </p>
+            <Button 
+              onClick={() => window.location.href = '/'}
+              variant="outline"
+              className="mt-4"
+            >
+              Return to Home
+            </Button>
           </div>
         </div>
       )}
