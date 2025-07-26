@@ -1,31 +1,9 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
-import { Card } from "@/components/ui/card";
-import { ChatUpload } from "@/components/ChatUpload";
-import { 
-  Shield, 
-  Target, 
-  Search, 
-  Activity, 
-  AlertTriangle, 
-  FileText,
-  Send,
-  Globe,
-  Lock,
-  Zap
-} from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { 
+  Shield
+} from "lucide-react";
 
 export const HeroSection = () => {
-  const [prompt, setPrompt] = useState("");
-  const [isPublic, setIsPublic] = useState(true);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle AI workflow creation
-    console.log("Creating pentesting workflow:", prompt);
-  };
 
   return (
     <div className="relative min-h-screen bg-gradient-hero overflow-hidden">
@@ -38,7 +16,7 @@ export const HeroSection = () => {
       
       <div className="relative z-10 container mx-auto px-6 py-20">
         {/* Main Hero Content */}
-        <div className="text-center mb-16">
+        <div className="text-center min-h-screen flex flex-col justify-center">
           <div className="flex justify-center mb-6">
             <Badge variant="secondary" className="px-4 py-2 text-sm bg-background/20 backdrop-blur-sm border-white/20">
               <Shield className="h-4 w-4 mr-2" />
@@ -59,105 +37,21 @@ export const HeroSection = () => {
             vulnerability analysis, and reporting using cutting-edge LLM technology
           </p>
 
-          {/* AI Workflow Creator */}
-          <Card className="max-w-4xl mx-auto p-8 bg-card/80 backdrop-blur-md border-border">
-            <div className="mb-6 text-center">
-              <div className="flex items-center justify-center mb-4">
-                <Zap className="h-8 w-8 text-orange-500 mr-3" />
-                <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold">
-                  <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">
-                    Pentesting Workflow Builder
-                  </span>
-                </h3>
-              </div>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Upload questionnaires, describe requirements, and let AI design custom penetration testing workflows with n8n automation
-              </p>
-            </div>
-            
-            {/* Chat Upload Interface */}
-            <div className="mb-6">
-              <ChatUpload />
-            </div>
-            
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-4">
-                <Button
-                  type="button"
-                  variant={isPublic ? "default" : "secondary"}
-                  size="sm"
-                  onClick={() => setIsPublic(!isPublic)}
-                  className="bg-secondary hover:bg-secondary/80"
-                >
-                  {isPublic ? <Globe className="h-4 w-4 mr-2" /> : <Lock className="h-4 w-4 mr-2" />}
-                  {isPublic ? "Public Workflow" : "Private Workflow"}
-                </Button>
-                
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <AlertTriangle className="h-4 w-4" />
-                  <span>Enterprise-grade security analysis</span>
+          {/* Stats */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+            {[
+              { number: "50K+", label: "Security Tests Automated" },
+              { number: "99.9%", label: "Accuracy Rate" },
+              { number: "10x", label: "Faster Than Manual Testing" }
+            ].map((stat, index) => (
+              <div key={index}>
+                <div className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-accent bg-clip-text text-transparent">
+                  {stat.number}
                 </div>
+                <p className="text-white/70">{stat.label}</p>
               </div>
-              
-              <div className="text-sm text-muted-foreground">
-                Powered by n8n & LLM
-              </div>
-            </div>
-          </Card>
-        </div>
-
-        {/* Workflow Categories */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-20">
-          {[
-            {
-              icon: Search,
-              title: "Reconnaissance",
-              description: "Automated discovery and enumeration",
-              color: "from-n8n-orange to-n8n-purple"
-            },
-            {
-              icon: Target,
-              title: "Vulnerability Scanning",
-              description: "AI-powered vulnerability detection",
-              color: "from-n8n-purple to-cyber-blue"
-            },
-            {
-              icon: Activity,
-              title: "Exploitation",
-              description: "Intelligent exploit automation",
-              color: "from-cyber-blue to-n8n-orange"
-            },
-            {
-              icon: FileText,
-              title: "Reporting",
-              description: "LLM-generated security reports",
-              color: "from-n8n-orange to-n8n-purple"
-            }
-          ].map((category, index) => (
-            <Card key={index} className="p-6 bg-card/60 backdrop-blur-sm border-border hover:bg-card/80 transition-all duration-300 group cursor-pointer">
-              <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${category.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                <category.icon className="h-6 w-6 text-white" />
-              </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">{category.title}</h3>
-              <p className="text-muted-foreground text-sm">{category.description}</p>
-            </Card>
-          ))}
-        </div>
-
-        {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 text-center">
-          {[
-            { number: "50K+", label: "Security Tests Automated" },
-            { number: "99.9%", label: "Accuracy Rate" },
-            { number: "10x", label: "Faster Than Manual Testing" }
-          ].map((stat, index) => (
-            <div key={index}>
-              <div className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-accent bg-clip-text text-transparent">
-                {stat.number}
-              </div>
-              <p className="text-muted-foreground">{stat.label}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>
