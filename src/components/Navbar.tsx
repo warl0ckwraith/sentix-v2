@@ -73,13 +73,13 @@ export const Navbar = () => {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8" role="navigation">
           <Link 
-            to="/dashboard" 
+            to="/platform" 
             className={`text-white/90 hover:text-white focus:text-white transition-all duration-200 font-medium text-sm py-2 px-3 rounded-md hover:bg-white/10 relative group ${
-              location.pathname === '/dashboard' ? 'text-white' : ''
+              location.pathname === '/platform' ? 'text-white' : ''
             }`}
-            aria-label="Access dashboard"
+            aria-label="Learn about our platform"
           >
-            Dashboard
+            Platform
             <span className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-orange-400 to-orange-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
           </Link>
           <Link 
@@ -149,11 +149,11 @@ export const Navbar = () => {
           >
             <div className="flex flex-col space-y-1 pt-4">
               <Link 
-                to="/dashboard" 
+                to="/platform" 
                 className="text-white/90 hover:text-white focus:text-white transition-colors font-medium px-4 py-3 rounded-md hover:bg-white/10"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Dashboard
+                Platform
               </Link>
               <Link 
                 to="/features" 
