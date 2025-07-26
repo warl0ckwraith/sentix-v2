@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
+import { ChatUpload } from "@/components/ChatUpload";
 import { 
   Shield, 
   Target, 
@@ -61,51 +62,37 @@ export const HeroSection = () => {
           <Card className="max-w-4xl mx-auto p-8 bg-card/80 backdrop-blur-md border-border">
             <div className="mb-6">
               <h3 className="text-xl font-semibold text-foreground mb-2">Pentesting Workflow Builder</h3>
-              <p className="text-muted-foreground">Describe your pentesting requirements, scope, and objectives. Our AI will generate a comprehensive workflow for you.</p>
+              <p className="text-muted-foreground">Upload questionnaires, describe requirements, and let AI design custom penetration testing workflows with n8n automation</p>
             </div>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="relative">
-                <Textarea
-                  value={prompt}
-                  onChange={(e) => setPrompt(e.target.value)}
-                  placeholder="Details"
-                  className="min-h-[200px] text-base bg-background/60 border-border text-foreground placeholder:text-muted-foreground resize-none p-4"
-                />
+            
+            {/* Chat Upload Interface */}
+            <div className="mb-6">
+              <ChatUpload />
+            </div>
+            
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
                 <Button
-                  type="submit"
+                  type="button"
+                  variant={isPublic ? "default" : "secondary"}
                   size="sm"
-                  className="absolute right-3 bottom-3 bg-primary hover:bg-primary/90"
-                  disabled={!prompt.trim()}
+                  onClick={() => setIsPublic(!isPublic)}
+                  className="bg-secondary hover:bg-secondary/80"
                 >
-                  <Send className="h-4 w-4 mr-2" />
-                  Generate Workflow
+                  {isPublic ? <Globe className="h-4 w-4 mr-2" /> : <Lock className="h-4 w-4 mr-2" />}
+                  {isPublic ? "Public Workflow" : "Private Workflow"}
                 </Button>
+                
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <AlertTriangle className="h-4 w-4" />
+                  <span>Enterprise-grade security analysis</span>
+                </div>
               </div>
               
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-4">
-                  <Button
-                    type="button"
-                    variant={isPublic ? "default" : "secondary"}
-                    size="sm"
-                    onClick={() => setIsPublic(!isPublic)}
-                    className="bg-secondary hover:bg-secondary/80"
-                  >
-                    {isPublic ? <Globe className="h-4 w-4 mr-2" /> : <Lock className="h-4 w-4 mr-2" />}
-                    {isPublic ? "Public Workflow" : "Private Workflow"}
-                  </Button>
-                  
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <AlertTriangle className="h-4 w-4" />
-                    <span>Enterprise-grade security analysis</span>
-                  </div>
-                </div>
-                
-                <div className="text-sm text-muted-foreground">
-                  Powered by n8n & LLM
-                </div>
+              <div className="text-sm text-muted-foreground">
+                Powered by n8n & LLM
               </div>
-            </form>
+            </div>
           </Card>
         </div>
 

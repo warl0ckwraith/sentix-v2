@@ -2,8 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ChatUpload } from "@/components/ChatUpload";
-import { 
+import {
   Shield, 
   Network, 
   Globe, 
@@ -13,8 +12,7 @@ import {
   Eye,
   Play,
   Star,
-  Users,
-  Zap
+  Users
 } from "lucide-react";
 
 export const WorkflowShowcase = () => {
@@ -86,29 +84,14 @@ export const WorkflowShowcase = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="flex items-center justify-center mb-4">
-            <Zap className="h-8 w-8 text-primary mr-3" />
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
-              <span className="bg-gradient-to-r from-[#FF6B6B] via-[#FF73B3] to-[#7B68EE] bg-clip-text text-transparent">
-                Pentesting Workflow Builder
-              </span>
-            </h2>
-          </div>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
-            Upload questionnaires, describe requirements, and let AI design custom penetration testing workflows with n8n automation
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-[#FF6B6B] via-[#FF73B3] to-[#7B68EE] bg-clip-text text-transparent">
+              Community Workflows
+            </span>
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Discover and remix proven penetration testing workflows created by cybersecurity experts worldwide
           </p>
-          
-          {/* Chat Upload Interface */}
-          <div className="max-w-4xl mx-auto mb-16">
-            <ChatUpload />
-          </div>
-        </div>
-
-        {/* Divider */}
-        <div className="flex items-center gap-4 mb-16">
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
-          <span className="text-sm text-muted-foreground bg-background px-4">Or explore community workflows</span>
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
         </div>
 
         {/* Category Filter */}
