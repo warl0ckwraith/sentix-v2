@@ -44,13 +44,19 @@ All colors MUST be HSL.
     --cyber-blue: 212 100% 47%;
     --terminal-green: 120 100% 50%;
     
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(230 25% 6%), hsl(280 60% 15%));
+    /* Gradients - Lovify-inspired */
+    --gradient-hero: linear-gradient(135deg, hsl(220 25% 8%) 0%, hsl(280 60% 15%) 50%, hsl(320 50% 20%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(220 30% 10%));
     --gradient-accent: linear-gradient(90deg, hsl(var(--n8n-orange)), hsl(var(--n8n-purple)));
+    --gradient-lovify: linear-gradient(135deg, #FF6B6B 0%, #FF73B3 25%, #7B68EE 75%, #4ECDC4 100%);
+    
+    /* Shadows & Effects */
+    --shadow-glow: 0 0 30px rgba(255, 107, 107, 0.2);
+    --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3);
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --sidebar-background: 220 25% 8%;
     --sidebar-foreground: 210 40% 98%;
