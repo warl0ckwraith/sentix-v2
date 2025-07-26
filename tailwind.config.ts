@@ -71,6 +71,13 @@ export default {
 					green: 'hsl(var(--terminal-green))'
 				}
 			},
+			fontFamily: {
+				'heading': 'var(--font-heading)',
+				'body': 'var(--font-body)'
+			},
+			spacing: {
+				'touch': 'var(--min-touch-target)'
+			},
 			backgroundImage: {
 				'gradient-hero': 'var(--gradient-hero)',
 				'gradient-card': 'var(--gradient-card)',
@@ -79,7 +86,12 @@ export default {
 			},
 			boxShadow: {
 				'glow': 'var(--shadow-glow)',
-				'card': 'var(--shadow-card)'
+				'card': 'var(--shadow-card)',
+				'subtle': 'var(--shadow-subtle)',
+				'focus': 'var(--shadow-focus)'
+			},
+			transitionDuration: {
+				'fast': '150ms'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
