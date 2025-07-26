@@ -16,7 +16,7 @@ export const WorkflowBuilderSection = () => {
     <div className="py-20 px-4 sm:px-6 bg-muted/30">
       <div className="max-w-7xl mx-auto">
         {/* Transitional Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <h2 className="text-2xl md:text-3xl font-semibold text-muted-foreground mb-4">
             Ready to Build Your Workflow?
           </h2>

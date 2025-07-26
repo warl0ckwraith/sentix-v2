@@ -10,28 +10,28 @@ export const FeaturesSection = () => {
   const features = [
     {
       icon: Search,
-      title: "🛰 Reconnaissance",
+      title: "Reconnaissance",
       subtitle: "Automated discovery and enumeration",
       description: "Deploy scanning routines and gather target intelligence seamlessly.",
       color: "from-n8n-orange to-n8n-purple"
     },
     {
       icon: Target,
-      title: "🔍 Vulnerability Scanning",
+      title: "Vulnerability Scanning",
       subtitle: "AI-powered vulnerability detection",
       description: "Leverage machine learning to uncover CVEs, misconfigurations, and more—faster.",
       color: "from-n8n-purple to-cyber-blue"
     },
     {
       icon: Activity,
-      title: "💣 Exploitation",
+      title: "Exploitation",
       subtitle: "Intelligent exploit automation",
       description: "Trigger payloads with contextual understanding and precision.",
       color: "from-cyber-blue to-n8n-orange"
     },
     {
       icon: FileText,
-      title: "📊 Reporting",
+      title: "Reporting",
       subtitle: "LLM-generated security reports",
       description: "Turn raw results into polished, actionable insights for clients and compliance.",
       color: "from-n8n-orange to-n8n-purple"

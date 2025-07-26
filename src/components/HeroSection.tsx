@@ -38,7 +38,7 @@ export const HeroSection = () => {
           </p>
 
           {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
             {[
               { number: "50K+", label: "Security Tests Automated" },
               { number: "99.9%", label: "Accuracy Rate" },
