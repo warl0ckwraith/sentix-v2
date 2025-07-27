@@ -175,4 +175,41 @@ All colors MUST be HSL.
       background-position: 300% 0;
     }
   }
+
+  /* Dashboard Animations */
+  .progress-bar {
+    transition: width 0.8s ease-out;
+  }
+
+  .scanning {
+    animation: pulse 2s infinite;
+  }
+
+  .activity-item {
+    animation: slideInRight 0.3s ease-out;
+  }
+
+  .metric-card:hover {
+    transform: translateY(-2px);
+  }
+
+  @keyframes slideInRight {
+    from { 
+      transform: translateX(100%); 
+      opacity: 0; 
+    }
+    to { 
+      transform: translateX(0); 
+      opacity: 1; 
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% { 
+      opacity: 1; 
+    }
+    50% { 
+      opacity: 0.5; 
+    }
+  }
 }
